@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Anchor from "../Elements/Anchor";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -7,16 +8,18 @@ const Navbar = () => {
   return (
     <nav className="shadow-xl w-full fixed top-0 left-0 z-50">
       <div className="flex items-center justify-between flex-wrap bg-white py-6 px-10">
-        <div className="flex items-center flex-shrink-0 mr-6 gap-3">
-          <img
-            src="./logo.png"
-            alt="Indonesia Mustahil Lapar"
-            className="w-12 h-12 rounded"
-          />
-          <p className="flex flex-col w-[140px] text-base font-bold text-zinc-800 font-sans">
-            INDONESIA MUSTAHIL LAPAR
-          </p>
-        </div>
+        <Link to={"/"}>
+          <div className="flex items-center flex-shrink-0 mr-6 gap-3">
+            <img
+              src="./logo.png"
+              alt="Indonesia Mustahil Lapar"
+              className="w-12 h-12 rounded"
+            />
+            <p className="flex flex-col w-[140px] text-base font-bold text-zinc-800 font-sans">
+              INDONESIA MUSTAHIL LAPAR
+            </p>
+          </div>
+        </Link>
         <button
           onClick={() => setOpen(!open)}
           className="px-3 py-2 border rounded text-gray-600 border-gray-400 hover:text-black hover:border-black absolute right-8 cursor-pointer md:hidden"

@@ -71,7 +71,7 @@ const HomePage = () => {
             <div className="flex justify-center w-full">
               <Link
                 className="border-4 border-[#1a2d57] py-3 px-6 rounded-xl text-[#1a2d57] text-center text-md font-bold"
-                to="/"
+                to="cerita-kebaikan"
               >
                 Lihat Amal Lainnya
               </Link>
