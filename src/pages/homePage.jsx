@@ -3,8 +3,7 @@ import Card from "../components/Fragments/Card";
 import Category from "../components/Fragments/Category";
 import CarouselSection from "../components/Layouts/CarouselSection";
 import Container from "../components/Layouts/Container";
-import { partnership } from "../assets";
-import { cards } from "../assets";
+import { cards, partnership } from "../assets";
 import { Link } from "react-router-dom";
 import GirlCard from "../components/Fragments/GirlCard";
 import CardOverlay from "../components/Fragments/CardOverlay";
@@ -27,7 +26,7 @@ const HomePage = () => {
           />
 
           <Category />
-          <div className="flex flex-wrap justify-between mt-[50px]">
+          <div className="flex flex-wrap gap-x-4 justify-evenly mt-[50px]">
             {cards.map((card) => (
               <Card
                 key={card.id}
@@ -41,7 +40,7 @@ const HomePage = () => {
             <div className="flex justify-center w-full">
               <Link
                 className="border-4 border-[#1a2d57] py-3 px-6 rounded-xl text-[#1a2d57] text-center text-md font-bold"
-                to="/"
+                to="program-kebaikan"
               >
                 Lihat Amal Lainnya
               </Link>
@@ -58,7 +57,7 @@ const HomePage = () => {
             span="Kebaikan"
             p="Temui Cerita Kebaikan Hari ini"
           />
-          <div className="flex flex-wrap justify-between mt-[50px]">
+          <div className="flex flex-wrap gap-x-4 justify-evenly mt-[50px]">
             {cards.map((card) => (
               <Card
                 key={card.id}
