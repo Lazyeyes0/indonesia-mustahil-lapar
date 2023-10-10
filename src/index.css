@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.carousel .control-dots .dot {
+  background-color: #1a2d57 !important;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  filter: grayscale(80%);
+}
+.carousel .slider-wrapper.axis-horizontal .slider .slide.selected {
+  filter: none;
+}
+.swiper-pagination-bullet-active {
+  background: #ff0c3d !important;
+}

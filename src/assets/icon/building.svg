@@ -1,0 +1,15 @@
+<svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="hotel">
+<path id="Rectangle 6" d="M0 5C0 2.23858 2.23858 0 5 0H21C23.7614 0 26 2.23858 26 5V27.0612H0V5Z" fill="#1A2D57"/>
+<rect id="Rectangle 7" x="9.02051" y="18.5714" width="7.95918" height="9.55102" fill="white"/>
+<rect id="Rectangle 8" x="2.65308" y="4.24487" width="2.65306" height="2.65306" fill="white"/>
+<rect id="Rectangle 10" x="9.02051" y="4.24487" width="2.65306" height="2.65306" fill="white"/>
+<rect id="Rectangle 11" x="14.8572" y="4.24487" width="2.65306" height="2.65306" fill="white"/>
+<rect id="Rectangle 12" x="21.2244" y="4.24487" width="2.65306" height="2.65306" fill="white"/>
+<rect id="Rectangle 13" x="2.65308" y="10.0817" width="2.65306" height="2.65306" fill="white"/>
+<rect id="Rectangle 14" x="9.02051" y="10.0817" width="2.65306" height="2.65306" fill="white"/>
+<rect id="Rectangle 15" x="14.8572" y="10.0817" width="2.65306" height="2.65306" fill="white"/>
+<rect id="Rectangle 16" x="21.2244" y="10.0817" width="2.65306" height="2.65306" fill="white"/>
+<path id="Ellipse 6" d="M12.9999 15.3878C9.92288 15.3878 7.42847 17.0508 7.42847 19.1021H18.5713C18.5713 17.0508 16.0769 15.3878 12.9999 15.3878Z" fill="white"/>
+</g>
+</svg>
