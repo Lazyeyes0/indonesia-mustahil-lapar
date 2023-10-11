@@ -32,6 +32,9 @@ import dokumentasi3 from "./dokumentasi/3.png";
 import dokumentasi4 from "./dokumentasi/4.png";
 import dokumentasi5 from "./dokumentasi/5.png";
 
+import bca from "./logo/bca.png";
+import briSyariah from "./logo/bri-syariah.png";
+
 const categories = [
   {
     name: "Semua",
@@ -238,7 +241,7 @@ const desc = `Kalimantan, 16 September 2020 – Air minum menjadi kebutuhan poko
           Indonesia untuk konsisten mengurangi sampah plastik, khususnya botol
           plastik sekali pakai untuk kelestarian lingkungan. Selain itu,
           memperdalam wawasan mengenai hal tersebut dari para ahli yang hadir
-          dalam talkshow tersebut. `;
+          dalam talkshow tersebut.`;
 
 export {
   carousel1,
@@ -251,6 +254,8 @@ export {
   cardOverlay,
   girl,
   footer,
+  bca,
+  briSyariah,
   desc,
   categories,
   cards,

@@ -67,7 +67,7 @@ const Navbar = () => {
             </button>
           </div>
           <div className="mt-2 lg:mt-0 text-end">
-            <Anchor link="/">Salurkan Kebaikan</Anchor>
+            <Anchor link="/salurkan-kebaikan">Salurkan Kebaikan</Anchor>
           </div>
         </div>
       </div>

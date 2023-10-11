@@ -1,4 +1,3 @@
-import Anchor from "../Elements/Anchor";
 import { girl } from "../../assets";
 import { Link } from "react-router-dom";
 
@@ -10,7 +9,7 @@ const GirlCard = () => {
           Silahkan Ajukan amal kebaikan
         </h2>
         <Link
-          to={"/"}
+          to={"/salurkan-kebaikan"}
           className="rounded-full py-3 px-6 bg-white text-[#1a2d57] text-center text-md font-bold"
         >
           Ajukan Segera

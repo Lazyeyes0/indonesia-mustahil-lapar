@@ -15,7 +15,7 @@ const CardOverlay = () => {
           Salurkan Kebaikanmu
         </h1>
         <Link
-          to={"/"}
+          to={"/salurkan-kebaikan"}
           className="rounded-full py-3 px-12 bg-white text-[#1a2d57] text-center text-xl font-bold"
         >
           Salurkan
