@@ -1,7 +1,9 @@
 import Container from "../components/Layouts/Container";
 import { calendar, carousel1, dokumentasi, desc } from "../assets";
+import { useParams } from "react-router-dom";
 
 const DetailPage = () => {
+  const { id } = useParams();
   return (
     <Container>
       <div className="mt-[150px]">
