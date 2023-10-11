@@ -33,6 +33,7 @@ const HomePage = () => {
                 cardImage={card.cardImage}
                 title={card.title}
                 date={card.date}
+                link={`/program-kebaikan/${card.id}`}
               >
                 {card.desc}
               </Card>

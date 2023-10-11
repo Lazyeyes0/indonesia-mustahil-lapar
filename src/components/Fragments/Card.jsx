@@ -1,7 +1,7 @@
 import { calendar } from "../../assets";
 import Anchor from "../Elements/Anchor";
 const Card = (props) => {
-  const { cardImage, children, title, date } = props;
+  const { cardImage, children, title, date, link, id } = props;
   return (
     <div className="rounded-2xl w-full md:w-[350px] lg:w-[385px] shadow-[8px_8px_32px_rgba(155,152,152,0.25)] mb-[60px]">
       <img
@@ -18,7 +18,7 @@ const Card = (props) => {
         <p className="text-wrap text-justify text-sm text-[#9F9A9A]">
           {children}
         </p>
-        <Anchor className="mt-4 mb-1 w-full" href="#">
+        <Anchor className="mt-4 mb-1 w-full" link={link}>
           Lihat Selengkapnya
         </Anchor>
       </div>
