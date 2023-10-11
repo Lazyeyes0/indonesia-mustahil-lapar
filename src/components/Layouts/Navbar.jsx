@@ -11,7 +11,7 @@ const Navbar = () => {
         <Link to={"/"}>
           <div className="flex items-center flex-shrink-0 mr-6 gap-3">
             <img
-              src="./logo.png"
+              src="/./logo.png"
               alt="Indonesia Mustahil Lapar"
               className="w-12 h-12 rounded"
             />

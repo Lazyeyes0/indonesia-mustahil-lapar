@@ -26,6 +26,12 @@ import email from "./icon/email.svg";
 import whatsapp from "./icon/whatsapp.svg";
 import call from "./icon/call.svg";
 
+import dokumentasi1 from "./dokumentasi/1.png";
+import dokumentasi2 from "./dokumentasi/2.png";
+import dokumentasi3 from "./dokumentasi/3.png";
+import dokumentasi4 from "./dokumentasi/4.png";
+import dokumentasi5 from "./dokumentasi/5.png";
+
 const categories = [
   {
     name: "Semua",
@@ -174,6 +180,66 @@ const contact = [
   },
 ];
 
+const dokumentasi = [
+  {
+    id: 1,
+    image: dokumentasi1,
+  },
+  {
+    id: 2,
+    image: dokumentasi2,
+  },
+  {
+    id: 3,
+    image: dokumentasi3,
+  },
+  {
+    id: 4,
+    image: dokumentasi4,
+  },
+  {
+    id: 5,
+    image: dokumentasi5,
+  },
+  {
+    id: 6,
+    image: cardImage,
+  },
+];
+const desc = `Kalimantan, 16 September 2020 – Air minum menjadi kebutuhan pokok bagi
+          manusia, selaras dengan anjuran pemerintah untuk seseorang dapat minum
+          air putih minimal 8 gelas per hari. Sejak marak kampanye untuk
+          menghindari air minum dalam kemasan plastik, masyarakat Indonesia
+          mulai tergerak untuk membawa botol minum sendiri dari rumah. Akan
+          tetapi, air minum satu botol saja tidak cukup untuk kebutuhan minum
+          air putih harian, khususnya dengan mobilitas yang tinggi. Spairum
+          meluncurkan produk “Stasiun Pengisian Air Minum” untuk mengakomodir
+          kebutuhan mengisi ulang botol minum bagi masyarakat sekitar. Inisiatif
+          ini dilakukan untuk menghindari pembelian botol minum plastik yang
+          sulit terurai oleh alam, khususnya mengganggu ekosistem laut.Menurut
+          Asosiasi Industri Plastik Indonesia (INAPLAS) dan Badan Pusat
+          Statistik (BPS) di tahun 2019, sampah plastik di Indonesia mencapai 64
+          juta ton per tahun. Sebanyak 3,2 juta ton di antaranya merupakan
+          sampah plastik yang dibuang ke laut. Karenanya, Spairum meluncurkan
+          Stasiun Pengisian Air Minum bersamaan dengan online talkshow bertajuk,
+          “A Beautiful Indonesia is A Waste Free Indonesia”. Acara ini juga
+          merupakan rangkaian dari program Young Changemakers Social Enterprise
+          Academy, sebuah program peningkatan kualitas usaha sosial yang digagas
+          oleh @america bersama Campaign.com. Sebagai salah satu finalis dalam
+          program tersebut, Spairum berkomitmen untuk melakukan inovasi di
+          tengah tatanan baru untuk mengajak masyarakat konsisten mengurangi
+          penggunaan plastik sekali pakai.The World Bank di 2018, sebanyak 87
+          kota di pesisir Indonesia memberikan kontribusi sampah ke laut sekitar
+          1,27 juta ton, dengan komposisi sampah plastik mencapai 9 juta ton.
+          Sebanyak 4,82 miliar diantaranya merupakan sampah botol plastik,
+          seperti dilansir dari World Atlas bahwa Indonesia merupakan negara
+          ke-4 pengguna botol plastik terbanyak di dunia. Melalui talkshow
+          online ini, Spairum ingin mengingatkan kembali pada masyarakat
+          Indonesia untuk konsisten mengurangi sampah plastik, khususnya botol
+          plastik sekali pakai untuk kelestarian lingkungan. Selain itu,
+          memperdalam wawasan mengenai hal tersebut dari para ahli yang hadir
+          dalam talkshow tersebut. `;
+
 export {
   carousel1,
   carousel2,
@@ -185,9 +251,11 @@ export {
   cardOverlay,
   girl,
   footer,
+  desc,
   categories,
   cards,
   partnership,
   social,
   contact,
+  dokumentasi,
 };
