@@ -7,6 +7,7 @@ import ProgramKebaikan from "./pages/programKebaikan";
 import CeritaKebaikan from "./pages/ceritaKebaikan";
 import DetailPage from "./pages/detailPage";
 import DonasiPage from "./pages/donasiPage";
+import NotFound from "./pages/404page";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
         <Route path="/cerita-kebaikan" element={<CeritaKebaikan />} />
         <Route path="/program-kebaikan/:id" element={<DetailPage />} />
         <Route path="/salurkan-kebaikan" element={<DonasiPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
