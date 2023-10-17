@@ -23,3 +23,12 @@ body {
 .swiper-pagination-bullet-active {
   background: #ff0c3d !important;
 }
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  height: 8px !important;
+}
+
+.swiper-scrollbar-drag {
+  background-color: #bebebe !important;
+}

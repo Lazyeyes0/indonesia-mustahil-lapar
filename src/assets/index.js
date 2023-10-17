@@ -56,6 +56,10 @@ const categories = [
     name: "Insfrastruktur",
     image: building,
   },
+  {
+    name: "Insfrastruktur",
+    image: building,
+  },
 ];
 
 const cards = [
@@ -209,6 +213,74 @@ const dokumentasi = [
     image: cardImage,
   },
 ];
+
+const donasi = [
+  {
+    id: 1,
+    image: dokumentasi1,
+    title: "Distribusi Minyak Goreng",
+    target: 500,
+    satuan: "Pcs",
+    terkumpul: 20,
+  },
+  {
+    id: 2,
+    image: dokumentasi2,
+    title: "Distribusi kelapa Goreng",
+    target: 50,
+    satuan: "Buah",
+    terkumpul: 20,
+  },
+  {
+    id: 3,
+    image: dokumentasi3,
+    title: "Distribusi Minyak rebus",
+    target: 200,
+    satuan: "Pcs",
+    terkumpul: 10,
+  },
+  {
+    id: 4,
+    image: dokumentasi4,
+    title: "Distribusi Minyak apa yah?",
+    target: 100,
+    satuan: "Pcs",
+    terkumpul: 25,
+  },
+  {
+    id: 5,
+    image: dokumentasi4,
+    title: "Distribusi Minyak apa yah?",
+    target: 100,
+    satuan: "Pcs",
+    terkumpul: 25,
+  },
+  {
+    id: 6,
+    image: dokumentasi4,
+    title: "Distribusi Minyak apa yah?",
+    target: 100,
+    satuan: "Pcs",
+    terkumpul: 25,
+  },
+  {
+    id: 7,
+    image: dokumentasi4,
+    title: "Distribusi Minyak apa yah?",
+    target: 100,
+    satuan: "Pcs",
+    terkumpul: 25,
+  },
+  {
+    id: 8,
+    image: dokumentasi4,
+    title: "Distribusi Minyak apa yah?",
+    target: 100,
+    satuan: "Pcs",
+    terkumpul: 25,
+  },
+];
+
 const desc = `Kalimantan, 16 September 2020 – Air minum menjadi kebutuhan pokok bagi
           manusia, selaras dengan anjuran pemerintah untuk seseorang dapat minum
           air putih minimal 8 gelas per hari. Sejak marak kampanye untuk
@@ -263,4 +335,5 @@ export {
   social,
   contact,
   dokumentasi,
+  donasi,
 };

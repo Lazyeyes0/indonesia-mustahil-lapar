@@ -1,8 +1,8 @@
 import Title from "../components/Elements/Title";
 import Category from "../components/Fragments/Category";
 import Container from "../components/Layouts/Container";
-import { cards } from "../assets";
-import Card from "../components/Fragments/Card";
+import { donasi } from "../assets";
+import CardDonation from "../components/Fragments/CardDonation";
 
 const ProgramKebaikan = () => {
   return (
@@ -16,26 +16,28 @@ const ProgramKebaikan = () => {
 
         <Category />
 
-        <div className="flex flex-wrap gap-x-4 justify-evenly mt-[70px] mb-[100px]">
-          {cards.map((card) => (
-            <Card
-              key={card.id}
-              cardImage={card.cardImage}
-              title={card.title}
-              date={card.date}
-            >
-              {card.desc}
-            </Card>
+        <div className="flex flex-wrap justify-center gap-x-3 mt-[70px] mb-[100px]">
+          {donasi.map((item) => (
+            <CardDonation
+              key={`program-kebaikan-${item.id}`}
+              cardImage={item.image}
+              title={item.title}
+              link={`/program-kebaikan/${item.id}`}
+              terkumpul={item.terkumpul}
+              target={item.target}
+              satuan={item.satuan}
+            />
           ))}
-          {cards.map((card) => (
-            <Card
-              key={card.id}
-              cardImage={card.cardImage}
-              title={card.title}
-              date={card.date}
-            >
-              {card.desc}
-            </Card>
+          {donasi.map((item) => (
+            <CardDonation
+              key={`program-kebaikan-${item.id}`}
+              cardImage={item.image}
+              title={item.title}
+              link={`/program-kebaikan/${item.id}`}
+              terkumpul={item.terkumpul}
+              target={item.target}
+              satuan={item.satuan}
+            />
           ))}
         </div>
       </div>

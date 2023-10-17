@@ -3,7 +3,7 @@ import Card from "../components/Fragments/Card";
 import Category from "../components/Fragments/Category";
 import CarouselSection from "../components/Layouts/CarouselSection";
 import Container from "../components/Layouts/Container";
-import { cards, partnership } from "../assets";
+import { cards, partnership, donasi } from "../assets";
 import { Link } from "react-router-dom";
 import GirlCard from "../components/Fragments/GirlCard";
 import CardOverlay from "../components/Fragments/CardOverlay";
@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import CardDonation from "../components/Fragments/CardDonation";
 
 const HomePage = () => {
   return (
@@ -26,26 +27,40 @@ const HomePage = () => {
           />
 
           <Category />
-          <div className="flex flex-wrap gap-x-4 justify-evenly mt-[50px]">
-            {cards.map((card) => (
-              <Card
-                key={card.id}
-                cardImage={card.cardImage}
-                title={card.title}
-                date={card.date}
-                link={`/program-kebaikan/${card.id}`}
-              >
-                {card.desc}
-              </Card>
+          <Swiper
+            className="mt-[50px]"
+            breakpoints={{
+              540: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 4,
+              },
+            }}
+          >
+            {donasi.map((item) => (
+              <SwiperSlide key={`program-kebaikan-${item.id}`} className="py-5">
+                <CardDonation
+                  cardImage={item.image}
+                  title={item.title}
+                  link={`/program-kebaikan/${item.id}`}
+                  terkumpul={item.terkumpul}
+                  target={item.target}
+                  satuan={item.satuan}
+                />
+              </SwiperSlide>
             ))}
-            <div className="flex justify-center w-full">
-              <Link
-                className="border-4 border-[#1a2d57] py-3 px-6 rounded-xl text-[#1a2d57] text-center text-md font-bold"
-                to="program-kebaikan"
-              >
-                Lihat Amal Lainnya
-              </Link>
-            </div>
+          </Swiper>
+          <div className="flex justify-center w-full">
+            <Link
+              className="border-4 border-[#1a2d57] py-3 px-6 rounded-xl text-[#1a2d57] text-center text-md font-bold"
+              to="program-kebaikan"
+            >
+              Lihat Amal Lainnya
+            </Link>
           </div>
           <div className="mt-[60px]">
             <GirlCard></GirlCard>
