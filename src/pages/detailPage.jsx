@@ -1,9 +1,7 @@
 import Container from "../components/Layouts/Container";
 import { calendar, carousel1, dokumentasi, desc } from "../assets";
-import { useParams } from "react-router-dom";
 
 const DetailPage = () => {
-  const { id } = useParams();
   return (
     <Container>
       <div className="mt-[150px]">
@@ -47,7 +45,6 @@ const DetailPage = () => {
             height="530px"
             src="https://www.youtube.com/embed/m0r_d4tUP5g?si=3ecAC277AiJ48p53"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
             className="mb-[130px] rounded-3xl"

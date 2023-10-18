@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Card from "../components/Fragments/Card";
 import Category from "../components/Fragments/Category";
 import CarouselSection from "../components/Layouts/CarouselSection";

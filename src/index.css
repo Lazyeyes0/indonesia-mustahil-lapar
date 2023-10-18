@@ -32,3 +32,44 @@ body {
 .swiper-scrollbar-drag {
   background-color: #bebebe !important;
 }
+
+/* Gaya untuk semua browser */
+progress {
+  border-radius: 5px;
+  background: rgba(196, 196, 196, 0.58);
+  height: 11px;
+}
+
+/* Gaya untuk nilai progres di semua browser */
+progress::-webkit-progress-bar {
+  border-radius: 5px;
+  background: rgba(196, 196, 196, 0.58);
+  height: 11px;
+}
+
+/* Gaya untuk nilai progres di semua browser */
+progress::-webkit-progress-value {
+  border-radius: 5px;
+  background: #1a2d57;
+  height: 11px;
+}
+
+progress.detail {
+  border-radius: 5px;
+  background: rgba(196, 196, 196, 0.58);
+  height: 13px;
+}
+
+/* Gaya untuk nilai progres di semua browser */
+progress.detail::-webkit-progress-bar {
+  border-radius: 5px;
+  background: rgba(196, 196, 196, 0.58);
+  height: 13px;
+}
+
+/* Gaya untuk nilai progres di semua browser */
+progress.detail::-webkit-progress-value {
+  border-radius: 5px;
+  background: #1a2d57;
+  height: 13px;
+}

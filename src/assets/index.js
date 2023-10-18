@@ -281,6 +281,21 @@ const donasi = [
   },
 ];
 
+const carausel = [
+  {
+    id: 1,
+    image: carousel1,
+  },
+  {
+    id: 2,
+    image: carousel2,
+  },
+  {
+    id: 3,
+    image: carousel3,
+  },
+];
+
 const desc = `Kalimantan, 16 September 2020 – Air minum menjadi kebutuhan pokok bagi
           manusia, selaras dengan anjuran pemerintah untuk seseorang dapat minum
           air putih minimal 8 gelas per hari. Sejak marak kampanye untuk
@@ -336,4 +351,5 @@ export {
   contact,
   dokumentasi,
   donasi,
+  carausel,
 };
