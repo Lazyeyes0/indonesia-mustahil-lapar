@@ -4,139 +4,52 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { carausel } from "../assets";
+import { carausel, dokumentasi } from "../assets";
+import { useParams } from "react-router-dom";
+import { donasi } from "../assets";
 
-const tabsData = [
-  {
-    label: "Deskripsi",
-    content: `Kalimantan, 16 September 2020 – Air minum menjadi kebutuhan pokok bagi manusia, selaras dengan anjuran pemerintah untuk seseorang dapat minum air putih minimal 8 gelas per hari. Sejak marak kampanye untuk menghindari air minum dalam kemasan plastik, masyarakat Indonesia mulai tergerak untuk membawa botol minum sendiri dari rumah. Akan tetapi, air minum satu botol saja tidak cukup untuk kebutuhan minum air putih harian, khususnya dengan mobilitas yang tinggi. Spairum meluncurkan produk “Stasiun Pengisian Air Minum” untuk mengakomodir kebutuhan mengisi ulang botol minum bagi masyarakat sekitar. Inisiatif ini dilakukan untuk menghindari pembelian botol minum plastik yang sulit terurai oleh alam, khususnya mengganggu ekosistem laut.Menurut Asosiasi Industri Plastik Indonesia (INAPLAS) dan Badan Pusat Statistik (BPS) di tahun 2019, sampah plastik di Indonesia mencapai 64 juta ton per tahun. Sebanyak 3,2 juta ton di antaranya merupakan sampah plastik yang dibuang ke laut. Karenanya, Spairum meluncurkan Stasiun Pengisian Air Minum bersamaan dengan online talkshow bertajuk, “A Beautiful Indonesia is......`,
-  },
-  {
-    label: "Donatur",
-    content:
-      "Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
-  },
-];
-
-const Deskripsi = () => {
+const Deskripsi = (props) => {
+  const { desc } = props;
   return (
-    <div className="h-[60vh] overflow-y-auto">
-      <p>{tabsData[0].content}</p>
+    <div className="h-[30vh] lg:h-[60vh] overflow-y-auto">
+      <p>{desc}</p>
     </div>
   );
 };
 
-const Donatur = () => {
+const Donatur = (props) => {
+  const { donatur, satuan } = props;
   return (
-    <div className="flex flex-col gap-5 h-[60vh] overflow-y-auto">
-      <div className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3">
-        <div className="w-[73px] h-[73px]">
-          {/* <img
+    <div className="flex flex-col gap-5 h-[30vh] lg:h-[60vh] overflow-y-auto">
+      {donatur.map((item) => (
+        <div
+          className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3"
+          key={item.id}
+        >
+          <div className="w-[73px] h-[73px]">
+            {/* <img
             src={""}
             alt=""
             className="rounded-full w-full h-full object-cover"
           /> */}
-          <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
+            <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
+          </div>
+          <div className="w-[285px]">
+            <h2 className="text-lg font-bold text-[#ED9E87]">{item.name}</h2>
+            <h1 className="text-2xl font-bold text-[#1a2d57]">
+              {item.jumlah} {satuan}
+            </h1>
+            <p className="text-[#AEABAB] text-xs">{item.doa}</p>
+          </div>
         </div>
-        <div className="w-[285px]">
-          <h2 className="text-lg font-bold text-[#ED9E87]">Hamba Allah</h2>
-          <h1 className="text-2xl font-bold text-[#1a2d57]">50 Kemasan</h1>
-          <p className="text-[#AEABAB] text-xs">
-            semoga Dapat Bermanfaat dan berguna bagi penerima anak yatim
-          </p>
-        </div>
-      </div>
-      <div className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3">
-        <div className="w-[73px] h-[73px]">
-          {/* <img
-            src={""}
-            alt=""
-            className="rounded-full w-full h-full object-cover"
-          /> */}
-          <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
-        </div>
-        <div className="w-[285px]">
-          <h2 className="text-lg font-bold text-[#ED9E87]">Hamba Allah</h2>
-          <h1 className="text-2xl font-bold text-[#1a2d57]">50 Kemasan</h1>
-          <p className="text-[#AEABAB] text-xs">
-            semoga Dapat Bermanfaat dan berguna bagi penerima anak yatim
-          </p>
-        </div>
-      </div>
-      <div className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3">
-        <div className="w-[73px] h-[73px]">
-          {/* <img
-            src={""}
-            alt=""
-            className="rounded-full w-full h-full object-cover"
-          /> */}
-          <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
-        </div>
-        <div className="w-[285px]">
-          <h2 className="text-lg font-bold text-[#ED9E87]">Hamba Allah</h2>
-          <h1 className="text-2xl font-bold text-[#1a2d57]">50 Kemasan</h1>
-          <p className="text-[#AEABAB] text-xs">
-            semoga Dapat Bermanfaat dan berguna bagi penerima anak yatim
-          </p>
-        </div>
-      </div>
-      <div className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3">
-        <div className="w-[73px] h-[73px]">
-          {/* <img
-            src={""}
-            alt=""
-            className="rounded-full w-full h-full object-cover"
-          /> */}
-          <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
-        </div>
-        <div className="w-[285px]">
-          <h2 className="text-lg font-bold text-[#ED9E87]">Hamba Allah</h2>
-          <h1 className="text-2xl font-bold text-[#1a2d57]">50 Kemasan</h1>
-          <p className="text-[#AEABAB] text-xs">
-            semoga Dapat Bermanfaat dan berguna bagi penerima anak yatim
-          </p>
-        </div>
-      </div>
-      <div className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3">
-        <div className="w-[73px] h-[73px]">
-          {/* <img
-            src={""}
-            alt=""
-            className="rounded-full w-full h-full object-cover"
-          /> */}
-          <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
-        </div>
-        <div className="w-[285px]">
-          <h2 className="text-lg font-bold text-[#ED9E87]">Hamba Allah</h2>
-          <h1 className="text-2xl font-bold text-[#1a2d57]">50 Kemasan</h1>
-          <p className="text-[#AEABAB] text-xs">
-            semoga Dapat Bermanfaat dan berguna bagi penerima anak yatim
-          </p>
-        </div>
-      </div>
-      <div className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3">
-        <div className="w-[73px] h-[73px]">
-          {/* <img
-            src={""}
-            alt=""
-            className="rounded-full w-full h-full object-cover"
-          /> */}
-          <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
-        </div>
-        <div className="w-[285px]">
-          <h2 className="text-lg font-bold text-[#ED9E87]">Hamba Allah</h2>
-          <h1 className="text-2xl font-bold text-[#1a2d57]">50 Kemasan</h1>
-          <p className="text-[#AEABAB] text-xs">
-            semoga Dapat Bermanfaat dan berguna bagi penerima anak yatim
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
 
-const CardAction = () => {
-  const [count, setCount] = useState(0);
+const CardAction = (props) => {
+  const { harga } = props;
+  const [count, setCount] = useState(1);
 
   const decreaseCount = () => {
     if (count > 0) {
@@ -155,7 +68,7 @@ const CardAction = () => {
     return "Rp." + ribuan;
   };
 
-  const totalHarga = count * 10000;
+  const totalHarga = count * harga;
 
   return (
     <div className="flex flex-col rounded-2xl border-[5px] border-[#1a2d57] py-3 px-5">
@@ -196,10 +109,13 @@ const CardAction = () => {
           id="kirimDoa"
           className="w-full border border-[#979595] rounded-lg p-5"
           cols="30"
-          rows="4"
+          rows="3"
           placeholder="ketikkan doa kepada penerima pada kolom ini....."
         ></textarea>
-        <button className="w-full bg-[#1a2d57] text-white py-3 rounded-lg">
+        <button
+          className="w-full bg-[#1a2d57] text-white py-3 rounded-lg"
+          disabled={count === 0}
+        >
           Kirim
         </button>
       </div>
@@ -209,15 +125,16 @@ const CardAction = () => {
 
 const detailProgram = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const { id } = useParams();
+  const data = donasi.find((item) => item.slug === id);
+  const persentase = Math.round((data.terkumpul / data.target) * 100);
   return (
     <Container>
       <div className="mt-[150px]">
-        <h1 className="text-4xl font-bold text-[#374647] my-1">
-          Distribusi Sembako di desa mega timur
-        </h1>
+        <h1 className="text-4xl font-bold text-[#374647] my-1">{data.title}</h1>
         <p className="text-[#AEABAB] text-[20px] my-3">Sembako</p>
-        <div className="flex gap-3 mt-3">
-          <div className="w-4/6">
+        <div className="flex flex-col lg:flex-row gap-3 mt-3">
+          <div className="lg:w-4/6 w-full">
             <Swiper
               modules={[Pagination]}
               spaceBetween={20}
@@ -236,47 +153,76 @@ const detailProgram = () => {
             </Swiper>
             <div className="flex justify-between items-center my-5">
               <div className="text-white bg-[#1a2d57] rounded-lg py-2 px-4 font-bold">
-                20%
+                {persentase}%
               </div>
               <div className="text-end">
                 <h1 className="text-4xl font-bold text-[#1a2d57]">
-                  3 Kemasan Minyak
+                  {data.terkumpul} {data.satuan}
                 </h1>
                 <small className="text-[#AEABAB]">
-                  Terkumpul dari 500 Kemasan Minyak
+                  Terkumpul dari {data.target} {data.satuan}
                 </small>
               </div>
             </div>
-            <progress max="100" value="20" className="w-full detail" />
+            <progress
+              max="100"
+              value={`${persentase}`}
+              className="w-full detail"
+            />
 
             <div className="flex space-x-3 border-b">
-              {tabsData.map((tab, idx) => {
-                return (
-                  <button
-                    key={idx}
-                    className={`py-2 border-b-4 transition-colors duration-300 ${
-                      idx === activeTabIndex
-                        ? "border-[#1a2d57] text-[#1a2d57] text-xl font-bold"
-                        : "border-transparent hover:border-gray-200 text-xl font-bold text-[#505D5E]"
-                    }`}
-                    // Change the active tab on click.
-                    onClick={() => setActiveTabIndex(idx)}
-                  >
-                    {tab.label}
-                  </button>
-                );
-              })}
+              <button
+                className={`py-2 border-b-4 transition-colors duration-300 ${
+                  0 === activeTabIndex
+                    ? "border-[#1a2d57] text-[#1a2d57] text-xl font-bold"
+                    : "border-transparent hover:border-gray-200 text-xl font-bold text-[#505D5E]"
+                }`}
+                // Change the active tab on click.
+                onClick={() => setActiveTabIndex(0)}
+              >
+                Deskripsi
+              </button>
+              <button
+                className={`py-2 border-b-4 transition-colors duration-300 ${
+                  1 === activeTabIndex
+                    ? "border-[#1a2d57] text-[#1a2d57] text-xl font-bold"
+                    : "border-transparent hover:border-gray-200 text-xl font-bold text-[#505D5E]"
+                }`}
+                // Change the active tab on click.
+                onClick={() => setActiveTabIndex(1)}
+              >
+                Donatur
+              </button>
             </div>
             {/* Show active tab content. */}
             <div className="py-4 mb-10">
-              {activeTabIndex == 0 ? <Deskripsi /> : <Donatur />}
+              {activeTabIndex == 0 ? (
+                <Deskripsi desc={data.desc} />
+              ) : (
+                <Donatur donatur={data.donatur} satuan={data.satuan} />
+              )}
             </div>
           </div>
 
-          <div className="w-2/6">
+          <div className="lg:w-2/6 w-full">
             <div className="sticky top-[120px] mb-5">
-              <CardAction />
+              <CardAction harga={data.harga} />
             </div>
+          </div>
+        </div>
+        <div className="mb-12 mt-20">
+          <h1 className="text-5xl font-bold text-start text-[#1A2D57] mb-12">
+            Galery <span className="text-[#ED9E87]">Dokumentasi</span>
+          </h1>
+          <div className="flex flex-wrap justify-evenly">
+            {dokumentasi.map((dokumentasi) => (
+              <img
+                src={dokumentasi.image}
+                alt=""
+                key={dokumentasi.id}
+                className="w-full lg:h-[200px] lg:w-[385px] md:h-[200px] md:w-[340px] object-cover rounded-2xl mb-3"
+              />
+            ))}
           </div>
         </div>
       </div>

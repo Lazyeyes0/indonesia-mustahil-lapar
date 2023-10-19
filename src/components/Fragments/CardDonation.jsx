@@ -5,6 +5,15 @@ const CardDonation = (props) => {
 
   const persentase = Math.round((terkumpul / target) * 100);
 
+  const shortenTitle = (title, maxWords) => {
+    const words = title.split(" ");
+    if (words.length > maxWords) {
+      return words.slice(0, maxWords).join(" ") + " ...";
+    } else {
+      return title;
+    }
+  };
+
   return (
     <div className="rounded-2xl w-full md:w-[350px] lg:w-[290px] shadow-[8px_8px_32px_rgba(155,152,152,0.25)] mb-[60px]">
       <img
@@ -13,7 +22,9 @@ const CardDonation = (props) => {
         className="w-full object-cover rounded-2xl h-[160px]"
       />
       <div className="p-4">
-        <h1 className="font-bold text-lg text-[#374647]">{title}</h1>
+        <h1 className="font-bold text-lg text-[#374647]">
+          {shortenTitle(title, 3)}
+        </h1>
         <div className="my-3">
           <p className="text-[#ED9E87] text-sm font-bold text-end">Terkumpul</p>
           <div className="flex justify-between">

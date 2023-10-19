@@ -45,7 +45,7 @@ const HomePage = () => {
                 <CardDonation
                   cardImage={item.image}
                   title={item.title}
-                  link={`/program-kebaikan/${item.id}`}
+                  link={`/program-kebaikan/${item.slug}`}
                   terkumpul={item.terkumpul}
                   target={item.target}
                   satuan={item.satuan}
