@@ -136,24 +136,55 @@ const Donatur = () => {
 };
 
 const CardAction = () => {
+  const [count, setCount] = useState(0);
+
+  const decreaseCount = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
+
+  const formatRupiah = (angka) => {
+    var reverse = angka.toString().split("").reverse().join(""),
+      ribuan = reverse.match(/\d{1,3}/g);
+    ribuan = ribuan.join(".").split("").reverse().join("");
+    return "Rp." + ribuan;
+  };
+
+  const totalHarga = count * 10000;
+
   return (
     <div className="flex flex-col rounded-2xl border-[5px] border-[#1a2d57] py-3 px-5">
       <h2 className="text-lg font-bold text-[#1a2d57]">Atur Jumlah Donasi</h2>
       <div className="flex justify-between items-center w-full mt-5">
         <div className="flex gap-2 items-center">
-          <button className="w-[35px] h-[35px] border border-[#979595] font-extrabold text-xl text-[#979595] rounded-lg">
+          <button
+            className="w-[35px] h-[35px] border border-[#979595] font-extrabold text-xl text-[#979595] rounded-lg"
+            onClick={decreaseCount}
+          >
             -
           </button>
           <div className="w-[62px] h-[40px] border border-[#979595] rounded-lg flex items-center justify-center">
-            <p className="text-center font-bold text-xl text-[#979595]">0</p>
+            <p className="text-center font-bold text-xl text-[#979595]">
+              {count}
+            </p>
           </div>
-          <button className="w-[35px] h-[35px] bg-[#1a2d57] font-extrabold text-xl text-white rounded-lg">
+          <button
+            className="w-[35px] h-[35px] bg-[#1a2d57] font-extrabold text-xl text-white rounded-lg"
+            onClick={increaseCount}
+          >
             +
           </button>
         </div>
         <div className="flex flex-col text-end">
           <p className="font-bold text-lg text-[#ED9E87]">Total Harga</p>
-          <h2 className="font-extrabold text-2xl text-[#1a2d57]">Rp.140.000</h2>
+          <h2 className="font-extrabold text-2xl text-[#1a2d57]">
+            {formatRupiah(totalHarga)}
+          </h2>
         </div>
       </div>
       <div className="mt-3">
@@ -165,7 +196,7 @@ const CardAction = () => {
           id="kirimDoa"
           className="w-full border border-[#979595] rounded-lg p-5"
           cols="30"
-          rows="5"
+          rows="4"
           placeholder="ketikkan doa kepada penerima pada kolom ini....."
         ></textarea>
         <button className="w-full bg-[#1a2d57] text-white py-3 rounded-lg">
