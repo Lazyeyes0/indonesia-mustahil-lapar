@@ -41,7 +41,10 @@ const HomePage = () => {
             }}
           >
             {donasi.map((item) => (
-              <SwiperSlide key={`program-kebaikan-${item.id}`} className="py-5">
+              <SwiperSlide
+                key={`program-kebaikan-${item.slug}`}
+                className="py-5"
+              >
                 <CardDonation
                   cardImage={item.image}
                   title={item.title}

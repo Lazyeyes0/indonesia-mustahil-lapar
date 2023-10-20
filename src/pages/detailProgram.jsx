@@ -4,135 +4,23 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { carausel, dokumentasi } from "../assets";
+import { carausel, dokumentasi, donasi } from "../assets";
 import { useParams } from "react-router-dom";
-import { donasi } from "../assets";
-
-const Deskripsi = (props) => {
-  const { desc } = props;
-  return (
-    <div className="h-[30vh] lg:h-[60vh] overflow-y-auto">
-      <p>{desc}</p>
-    </div>
-  );
-};
-
-const Donatur = (props) => {
-  const { donatur, satuan } = props;
-  return (
-    <div className="flex flex-col gap-5 h-[30vh] lg:h-[60vh] overflow-y-auto">
-      {donatur.map((item) => (
-        <div
-          className="flex justify-center gap-3 items-center w-[420px] border-[5px] border-[#1a2d57] rounded-3xl py-3"
-          key={item.id}
-        >
-          <div className="w-[73px] h-[73px]">
-            {/* <img
-            src={""}
-            alt=""
-            className="rounded-full w-full h-full object-cover"
-          /> */}
-            <div className="bg-[#D9D9D9] w-full h-full rounded-full" />
-          </div>
-          <div className="w-[285px]">
-            <h2 className="text-lg font-bold text-[#ED9E87]">{item.name}</h2>
-            <h1 className="text-2xl font-bold text-[#1a2d57]">
-              {item.jumlah} {satuan}
-            </h1>
-            <p className="text-[#AEABAB] text-xs">{item.doa}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const CardAction = (props) => {
-  const { harga } = props;
-  const [count, setCount] = useState(1);
-
-  const decreaseCount = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
-
-  const increaseCount = () => {
-    setCount(count + 1);
-  };
-
-  const formatRupiah = (angka) => {
-    var reverse = angka.toString().split("").reverse().join(""),
-      ribuan = reverse.match(/\d{1,3}/g);
-    ribuan = ribuan.join(".").split("").reverse().join("");
-    return "Rp." + ribuan;
-  };
-
-  const totalHarga = count * harga;
-
-  return (
-    <div className="flex flex-col rounded-2xl border-[5px] border-[#1a2d57] py-3 px-5">
-      <h2 className="text-lg font-bold text-[#1a2d57]">Atur Jumlah Donasi</h2>
-      <div className="flex justify-between items-center w-full mt-5">
-        <div className="flex gap-2 items-center">
-          <button
-            className="w-[35px] h-[35px] border border-[#979595] font-extrabold text-xl text-[#979595] rounded-lg"
-            onClick={decreaseCount}
-          >
-            -
-          </button>
-          <div className="w-[62px] h-[40px] border border-[#979595] rounded-lg flex items-center justify-center">
-            <p className="text-center font-bold text-xl text-[#979595]">
-              {count}
-            </p>
-          </div>
-          <button
-            className="w-[35px] h-[35px] bg-[#1a2d57] font-extrabold text-xl text-white rounded-lg"
-            onClick={increaseCount}
-          >
-            +
-          </button>
-        </div>
-        <div className="flex flex-col text-end">
-          <p className="font-bold text-lg text-[#ED9E87]">Total Harga</p>
-          <h2 className="font-extrabold text-2xl text-[#1a2d57]">
-            {formatRupiah(totalHarga)}
-          </h2>
-        </div>
-      </div>
-      <div className="mt-3">
-        <label htmlFor="kirimDoa" className="font-bold text-[#AEABAB]">
-          Kirim Doa
-        </label>
-        <textarea
-          name=""
-          id="kirimDoa"
-          className="w-full border border-[#979595] rounded-lg p-5"
-          cols="30"
-          rows="3"
-          placeholder="ketikkan doa kepada penerima pada kolom ini....."
-        ></textarea>
-        <button
-          className="w-full bg-[#1a2d57] text-white py-3 rounded-lg"
-          disabled={count === 0}
-        >
-          Kirim
-        </button>
-      </div>
-    </div>
-  );
-};
+import Donatur from "../components/Fragments/DetailProgram/Donatur";
+import Deskripsi from "../components/Fragments/DetailProgram/Deskripsi";
+import CardAction from "../components/Fragments/DetailProgram/CardAction";
 
 const detailProgram = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const { id } = useParams();
   const data = donasi.find((item) => item.slug === id);
   const persentase = Math.round((data.terkumpul / data.target) * 100);
+
   return (
     <Container>
       <div className="mt-[150px]">
         <h1 className="text-4xl font-bold text-[#374647] my-1">{data.title}</h1>
-        <p className="text-[#AEABAB] text-[20px] my-3">Sembako</p>
+        <p className="text-[#AEABAB] text-[20px] my-3">{data.kategori}</p>
         <div className="flex flex-col lg:flex-row gap-3 mt-3">
           <div className="lg:w-4/6 w-full">
             <Swiper
