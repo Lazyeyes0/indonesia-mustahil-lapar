@@ -12,10 +12,12 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import CardDonation from "../components/Fragments/CardDonation";
+import Navbar from "../components/Layouts/Navbar";
 
 const HomePage = () => {
   return (
     <>
+      <Navbar />
       <CarouselSection />
       <Container>
         <div className="program-kebaikan mt-[120px] min-h-screen">

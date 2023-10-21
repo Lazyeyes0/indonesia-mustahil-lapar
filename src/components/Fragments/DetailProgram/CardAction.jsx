@@ -14,9 +14,7 @@ const CardAction = (props) => {
 
   const handleKirim = () => {
     if (count > 0) {
-      navigate(`/program-kebaikan/${id}/donasi`, {
-        state: { count, harga, id },
-      });
+      navigate(`/program-kebaikan/${id}/donasi/${count}/${harga}`);
     }
   };
 

@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import PerhitunganDonasi from "../components/Elements/PerhitunganDonasi";
 
-const DetailDonasi = (props) => {
-  props.funcNav(false);
-  const location = useLocation();
+const DetailDonasi = () => {
   const navigate = useNavigate();
+  const { id, count, harga } = useParams();
 
-  const { state } = location;
-  const { count, harga, id } = state;
   const [countDetail, setCountDetail] = useState(count);
   const [isHambaAllah, setIsHambaAllah] = useState(false);
   const [isNamaPendaftar, setIsNamaPendaftar] = useState(false);

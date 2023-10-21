@@ -27,14 +27,6 @@ const PerhitunganDonasi = (props) => {
     return "Rp." + ribuan;
   };
 
-  const handleKirim = () => {
-    if (count > 0) {
-      navigate(`/program-kebaikan/${id}/donasi`, {
-        state: { count, harga, id },
-      });
-    }
-  };
-
   const totalHarga = count * harga;
 
   return (

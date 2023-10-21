@@ -1,5 +1,6 @@
 import Container from "../components/Layouts/Container";
 import { girl, bca, briSyariah } from "../assets";
+import Navbar from "../components/Layouts/Navbar";
 
 const GirlCard = (props) => {
   const { image, bank, noBank } = props;
@@ -23,26 +24,29 @@ const GirlCard = (props) => {
 
 const DonasiPage = () => {
   return (
-    <Container>
-      <div className="mt-[180px]">
-        <h1 className="text-5xl font-bold text-center text-[#1A2D57] mb-4">
-          Terima Kasih <br />
-          <span className="text-[#ED9E87]">Orang Baik</span>
-        </h1>
-        <div className="mt-[50px] flex flex-col justify-center items-center gap-14 mb-[100px]">
-          <GirlCard
-            image={bca}
-            bank="Bank Central Asia"
-            noBank="0121122112211"
-          />
-          <GirlCard
-            image={briSyariah}
-            bank="Bank BRI Syariah"
-            noBank="1234567890"
-          />
+    <>
+      <Navbar />
+      <Container>
+        <div className="mt-[180px]">
+          <h1 className="text-5xl font-bold text-center text-[#1A2D57] mb-4">
+            Terima Kasih <br />
+            <span className="text-[#ED9E87]">Orang Baik</span>
+          </h1>
+          <div className="mt-[50px] flex flex-col justify-center items-center gap-14 mb-[100px]">
+            <GirlCard
+              image={bca}
+              bank="Bank Central Asia"
+              noBank="0121122112211"
+            />
+            <GirlCard
+              image={briSyariah}
+              bank="Bank BRI Syariah"
+              noBank="1234567890"
+            />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 

@@ -12,11 +12,8 @@ import NotFound from "./pages/404page";
 import { useState } from "react";
 
 function App() {
-  const [showNavbar, setShowNavbar] = useState(true);
   return (
     <>
-      {showNavbar && <Navbar />}
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/program-kebaikan" element={<ProgramKebaikan />} />
@@ -24,8 +21,8 @@ function App() {
         <Route path="/program-kebaikan/:id" element={<DetailProgram />} />
         <Route path="/salurkan-kebaikan" element={<DonasiPage />} />
         <Route
-          path="/program-kebaikan/:id/donasi"
-          element={<DetailDonasi funcNav={setShowNavbar} />}
+          path="/program-kebaikan/:id/donasi/:count/:harga"
+          element={<DetailDonasi />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
