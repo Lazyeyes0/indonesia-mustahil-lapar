@@ -14,7 +14,14 @@ const CardAction = (props) => {
 
   const handleKirim = () => {
     if (count > 0) {
-      navigate(`/program-kebaikan/${id}/donasi/${count}/${harga}`);
+      navigate(`/program-kebaikan/${id}/donasi`);
+      // Menyimpan data dalam cookie
+      document.cookie = `count=${count}; expires=${new Date(
+        Date.now() + 900000
+      ).toUTCString()}; path=/`;
+      document.cookie = `harga=${harga}; expires=${new Date(
+        Date.now() + 900000
+      ).toUTCString()}; path=/`;
     }
   };
 

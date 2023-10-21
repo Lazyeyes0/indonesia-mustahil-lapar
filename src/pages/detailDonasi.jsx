@@ -4,8 +4,18 @@ import PerhitunganDonasi from "../components/Elements/PerhitunganDonasi";
 
 const DetailDonasi = () => {
   const navigate = useNavigate();
-  const { id, count, harga } = useParams();
-
+  const { id } = useParams();
+  const cookies = document.cookie.split(";");
+  let count;
+  let harga;
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith("count=")) {
+      count = cookie.substring(6);
+    } else if (cookie.startsWith("harga=")) {
+      harga = cookie.substring(6);
+    }
+  }
   const [countDetail, setCountDetail] = useState(count);
   const [isHambaAllah, setIsHambaAllah] = useState(false);
   const [isNamaPendaftar, setIsNamaPendaftar] = useState(false);
@@ -18,6 +28,17 @@ const DetailDonasi = () => {
     setCountDetail(newCount);
   };
 
+  function deleteCookie(name) {
+    document.cookie =
+      name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+
+  const hanleBack = () => {
+    deleteCookie("count");
+    deleteCookie("harga");
+    navigate(-1);
+  };
+
   return (
     <>
       <div className="flex justify-center items-center bg-[#1a2d57] w-full h-[80px] md:h-[110px]">
@@ -26,7 +47,7 @@ const DetailDonasi = () => {
         </h1>
         <button
           className="absolute left-5 w-10 md:left-24 md:w-14"
-          onClick={() => navigate(-1)}
+          onClick={hanleBack}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

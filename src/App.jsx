@@ -9,7 +9,6 @@ import DetailProgram from "./pages/detailProgram";
 import DonasiPage from "./pages/donasiPage";
 import DetailDonasi from "./pages/detailDonasi";
 import NotFound from "./pages/404page";
-import { useState } from "react";
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
         <Route path="/program-kebaikan/:id" element={<DetailProgram />} />
         <Route path="/salurkan-kebaikan" element={<DonasiPage />} />
         <Route
-          path="/program-kebaikan/:id/donasi/:count/:harga"
+          path="/program-kebaikan/:id/donasi/"
           element={<DetailDonasi />}
         />
         <Route path="*" element={<NotFound />} />
